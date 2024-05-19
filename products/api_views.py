@@ -12,11 +12,14 @@ import re
 @api_view(http_method_names=['GET'])
 @permission_classes([IsAuthenticated])
 def get_all_products(request):
-    
-    products_data = ProductSerializer(Product.objects.all(),many=True).data
-    print("products_data del listado", products_data)
+    try:
+        products_data = ProductSerializer(Product.objects.all(),many=True).data
+        print("products_data del listado", products_data)
 
-    return Response({"status": 1, 'products':products_data})
+        return Response({"status": 1, 'products':products_data})
+        
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(http_method_names=['POST'])
 @permission_classes([IsAuthenticated])
@@ -93,7 +96,18 @@ def create_product(request):
             "msg": str(e),
         })
 
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def get_product_by_id(request, product_id):
+    try:
+        product = Product.objects.get(product_code=str(product_id).strip().upper())
+        serializer = ProductSerializer(product)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+    except Product.DoesNotExist:
+        return Response({"error": "Producto no encontrado"}, status=status.HTTP_404_NOT_FOUND)
+
 @api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
 def delete_product(request, product_id):
     try:
         product = Product.objects.get(product_code=str(product_id).strip().upper())
