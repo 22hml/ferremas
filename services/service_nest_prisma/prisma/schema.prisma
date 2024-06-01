@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlserver"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id        Int       @id(map: "PK_Users") @default(autoincrement())
+  name      String    @db.VarChar(100)
+  username  String    @unique(map: "UK_UserName_Users") @db.VarChar(50)
+  password  String    @db.VarChar(100)
+  email     String    @db.VarChar(90)
+  phone     Int?
+  createdAt DateTime? @db.DateTime
+  lastLogin DateTime? @db.DateTime
+  isActive  Boolean?
+}
