@@ -6,7 +6,7 @@ export const HeaderContainer = styled.nav`
     position: sticky;
     display: flex;
     justify-content: center;
-    background-color: ${color.text};
+    background-color: #f7f7f7;
 
     section {
         width: 100%;
@@ -21,7 +21,7 @@ export const HeaderContainer = styled.nav`
             gap: 32px;
 
             li {
-                color: ${color.background};
+                color: black;
 
                 .cartButton {
                     cursor: pointer;
@@ -30,13 +30,17 @@ export const HeaderContainer = styled.nav`
                         align-items: center;
                         gap: 6px;
                     }
+
+                    &.active {
+                        color: ${color.primary};
+                    }
                 }
 
                 a {
                     display: flex;
                     align-items: center;
                     gap: 6px;
-                    color: ${color.background};
+                    color: black;
                     text-decoration: none;
 
                     &.active {

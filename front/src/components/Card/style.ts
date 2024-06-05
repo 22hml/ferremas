@@ -2,13 +2,14 @@ import { color } from './../../GlobalStyles';
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-    background-color: ${color.altertext};
+    background-color: white ;
     padding: 18px;
     width: auto;
-    border-radius: 18px;
+    border: 1px solid #b5b5b5;
+    border-radius: 5px;
 
     &:hover {
-        outline: 2px solid ${color.primary};
+        outline: 1px solid grey;
     }
 
     .mainTitle {
@@ -50,7 +51,7 @@ export const CardContainer = styled.div`
         border: none;
         cursor: pointer;
         background-color: ${color.primary};
-        border-radius: 18px;
+        border-radius: 12px;
         padding: 12px 16px;
         transition: all 0.3s ease-in-out;
         color: white;

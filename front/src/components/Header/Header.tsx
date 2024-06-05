@@ -1,22 +1,23 @@
-import { IconBuildingStore, IconHome, IconPhone, IconShoppingCart } from "@tabler/icons-react"
+import { IconBuildingStore, IconHome, IconPhone, IconShoppingCart, IconShoppingCartPlus } from "@tabler/icons-react"
 import { HeaderContainer } from "./style"
 import { NavLink } from 'react-router-dom'
 import { useState } from "react"
 import { Cart } from "../Cart/Cart"
 
 export const Header = () => {
-  const [showCart, setShowCart] = useState(localStorage.getItem('ShowCart') ?  localStorage.getItem('ShowCart') : false);
+  const [isExpanded, setIsExpanded] = useState(localStorage.getItem('isExpanded') === 'true' ? true : false)
 
-  const handleCart = () => {
-    localStorage.setItem('ShowCart', 'true')
-    setShowCart(!showCart);
-  }
+  const toggleMenu = () => {
+    localStorage.setItem('isExpanded', (!isExpanded).toString());
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <>
     <HeaderContainer>
         <section>
             <div>
-                logo
+                FERRETERIA FERREMAS
             </div>
             <ul>
                 <li>
@@ -35,16 +36,17 @@ export const Header = () => {
                   </NavLink>
                 </li>
                 <li>
-                  <div className="cartButton" onClick={() => handleCart()}>
+                  <div className={isExpanded ? "cartButton active" : "cartButton"} onClick={() => toggleMenu()}>
                     <p>
-                      Mi Carrito <IconShoppingCart size={24} stroke={2}/>
+                      Mi Carrito
+                      {isExpanded ? <IconShoppingCartPlus size={24} stroke={2}/> : <IconShoppingCart size={24} stroke={2}/>}
                     </p>
                   </div>
                 </li>
             </ul>
         </section>
     </HeaderContainer>
-    {showCart && <Cart/>}
+    {isExpanded && <Cart handleCart={toggleMenu}/>}
     </>
   )
 }

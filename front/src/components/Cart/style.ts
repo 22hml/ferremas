@@ -16,6 +16,13 @@ export const CartMenu = styled.aside`
         font-weight: 600;
     }
 
+    .topSection {
+        button {
+            background-color: white;
+            color: black;
+        }
+    }
+
     .itemList {
         ul {
             li {
