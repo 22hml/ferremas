@@ -5,7 +5,7 @@ export const CartMenu = styled.aside`
     padding: 24px;
     position: fixed;
     right: 0;
-    width: 260px;
+    width: 300px;
     height: 100%;
     background-color: ${color.primary};
     color: white;
