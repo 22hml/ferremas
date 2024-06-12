@@ -1,6 +1,8 @@
 import { IconMinus, IconPaywall, IconPlus, IconX } from "@tabler/icons-react"
 import { CartMenu } from "./style"
 import { useCartStore } from "../../store/useCartStore"
+import { useEffect, useRef } from "react";
+import autoAnimate from "@formkit/auto-animate";
 
 interface PropTypes {
   handleCart: () => void;
@@ -16,6 +18,15 @@ export const Cart = ({ handleCart }: PropTypes) => {
     return cart.reduce((total, item) => total + item.price * item.quantity, 0)
   }
 
+  const cartRef = useRef(null);
+
+  useEffect(() => {
+    if (cartRef.current) {
+      autoAnimate(cartRef.current);
+    }
+  }, [cartRef]);
+
+
   return (
     <CartMenu>
       <div className="topSection">
@@ -23,7 +34,7 @@ export const Cart = ({ handleCart }: PropTypes) => {
         <button className="closeCart" onClick={handleCart}><IconX size={24} stroke={2}/></button>
       </div>
       <div className="itemList">
-        <ul>
+        <ul ref={cartRef}>
           {cart.map(item => (
             <li key={item.id}>
               {item.quantity}x {item.name} - {item.brand} 
