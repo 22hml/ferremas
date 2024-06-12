@@ -3,6 +3,11 @@ import { CardContainer } from "./style"
 
 
 export const Card = () => {
+
+  const handleAddCart = () => {
+    
+  }
+
   return (
     <CardContainer>
         <div className="mainTitle">
@@ -16,7 +21,9 @@ export const Card = () => {
         <div className="price">
             <p>$14.000</p>
         </div>
-        <button>Agregar al carrito <IconShoppingCart size={24} stroke={2}/></button>
+        <button onClick={() => {
+          handleAddCart()
+        }}>Agregar al carrito <IconShoppingCart size={24} stroke={2}/></button>
     </CardContainer>
   )
 }

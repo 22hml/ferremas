@@ -16,10 +16,18 @@ export const CartMenu = styled.aside`
         font-weight: 600;
     }
 
+
     .topSection {
+        display: flex;
+        align-items: center;
+
         button {
-            background-color: white;
-            color: black;
+            background-color: transparent;
+            border: none;
+
+            svg {
+                color: white;
+            }
         }
     }
 

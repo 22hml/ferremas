@@ -10,7 +10,7 @@ export const Cart = ({handleCart}: PropTypes) => {
     <CartMenu>
       <div className="topSection">
         <h3>Tu carrito</h3>
-        <button onClick={() => handleCart() }><IconX size={24} stroke={24}/></button>
+        <button className="closeCart" onClick={() => handleCart() }><IconX size={24} stroke={2}/></button>
       </div>
       <div className="itemList">
         <ul>
