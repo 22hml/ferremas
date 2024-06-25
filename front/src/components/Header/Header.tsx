@@ -18,9 +18,11 @@ export const Header = () => {
       </section>
       <HeaderContainer>
         <section>
-          <div>
-            <strong>FERRETERIA FERREMAS</strong>
-          </div>
+          <a href="/" style={{textDecoration: "none", color: "black"}}>
+            <div>
+              <strong>FERRETERIA FERREMAS</strong>
+            </div>
+          </a>
           <ul>
             <li>
               <NavLink to={'/'}>
