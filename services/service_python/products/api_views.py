@@ -20,6 +20,17 @@ def get_all_products(request):
     except Exception as e:
         return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
+@api_view(http_method_names=['GET'])
+def get_last10_products(request):
+    try:
+        products_data = ProductSerializer(Product.objects.all().order_by('-id')[:10],many=True).data
+        print("products_data del listado", products_data)
+
+        return Response({"status": 1, 'products':products_data})
+        
+    except Exception as e:
+        return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
+
 @api_view(http_method_names=['POST'])
 # @permission_classes([IsAuthenticated])
 def create_product(request):
