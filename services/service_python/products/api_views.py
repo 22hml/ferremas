@@ -21,7 +21,7 @@ def get_all_products(request):
         return Response({"error": str(e)}, status=status.HTTP_404_NOT_FOUND)
 
 @api_view(http_method_names=['POST'])
-@permission_classes([IsAuthenticated])
+# @permission_classes([IsAuthenticated])
 def create_product(request):
     try:
         if request and request.data:
@@ -44,6 +44,8 @@ def create_product(request):
             name = data.get('name', '').strip().upper()
             brand = data.get('brand', '').strip().upper()
             price = data.get('price', None)
+            img = data.get('img', None)
+            
             product_code = data.get('product_code', '').strip().upper()
 
             last_product = Product.objects.aggregate(Max('hardware_code'))
@@ -67,6 +69,7 @@ def create_product(request):
             product.name = name
             product.brand = brand
             product.price = price
+            product.imageUrl = img
             product.product_code = product_code
             product.hardware_code=next_hardware_code
             product.save()
