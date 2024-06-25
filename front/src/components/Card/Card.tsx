@@ -14,7 +14,7 @@ export const Card = ({id, name, brand, price, imgUrl} : PropTypes) => {
   const addToCart = useCartStore((state) => state.addToCart)
 
   const handleAddCart = () => {
-    const newItem = { id: 1, name: 'Destornillador', brand: 'Makitta', price: 14000 }
+    const newItem = { id, name, brand, price, imgUrl}
     addToCart(newItem)
   }
 

@@ -10,7 +10,6 @@ from django.db.models import Max
 import re
 
 @api_view(http_method_names=['GET'])
-@permission_classes([IsAuthenticated])
 def get_all_products(request):
     try:
         products_data = ProductSerializer(Product.objects.all(),many=True).data
@@ -97,7 +96,6 @@ def create_product(request):
         })
 
 @api_view(['GET'])
-@permission_classes([IsAuthenticated])
 def get_product_by_id(request, product_id):
     try:
         product = Product.objects.get(product_code=str(product_id).strip().upper())

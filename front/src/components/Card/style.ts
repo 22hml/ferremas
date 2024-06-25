@@ -5,6 +5,7 @@ export const CardContainer = styled.div`
     background-color: white ;
     padding: 18px;
     width: auto;
+    max-height: 400px;
     border: 1px solid #b5b5b5;
     border-radius: 5px;
 
@@ -27,7 +28,8 @@ export const CardContainer = styled.div`
     img {
         object-fit: cover;
         min-height: 230px;
-        max-width: 100%;
+        max-width: 230px;
+        width: 100%;
         border-radius: 18px;
     }
 

@@ -7,6 +7,7 @@ class Product(CustomModel):
     brand = models.CharField("Marca", max_length=500, blank=True, null=True)
     hardware_code = models.CharField("Codigo Ferretería", max_length=500, blank=True, null=True)
     price = models.IntegerField('Precio', default=0, blank=True, null=True)
+    imageUrl = models.CharField("Imagen", max_length=500, blank=True, null=True)
 
     class Meta:
         verbose_name = "Producto"
