@@ -10,7 +10,7 @@ export const LastProducts = () => {
 
   const callLastProducts = async () => {
     try {
-      const response = await fetch('http://localhost:8000/products/api/get_last_products/', {
+      const response = await fetch('http://localhost:8000/products/api/get_last10_products/', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export const LastProducts = () => {
   }
 
   useEffect(() => {
-    // callLastProducts();
+    callLastProducts();
   }, [])
 
   return (

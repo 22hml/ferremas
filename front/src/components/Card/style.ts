@@ -2,12 +2,15 @@ import { color } from './../../GlobalStyles';
 import styled from "styled-components";
 
 export const CardContainer = styled.div`
-    background-color: white ;
+    background-color: white;
     padding: 18px;
-    width: auto;
-    max-height: 400px;
+    width: 230px; /* Fija el ancho de la tarjeta */
+    height: 400px; /* Fija la altura de la tarjeta */
     border: 1px solid #b5b5b5;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 
     &:hover {
         outline: 1px solid grey;
@@ -26,9 +29,8 @@ export const CardContainer = styled.div`
     }
 
     img {
-        object-fit: cover;
-        min-height: 230px;
-        max-width: 230px;
+        object-fit: contain;
+        height: 230px; /* Fija la altura de la imagen */
         width: 100%;
         border-radius: 18px;
     }
@@ -57,6 +59,7 @@ export const CardContainer = styled.div`
         padding: 12px 16px;
         transition: all 0.3s ease-in-out;
         color: white;
+        width: 75%;
 
         &:hover {
             outline: 2px solid ${color.primary};
