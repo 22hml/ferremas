@@ -1,3 +1,4 @@
+import { Banner } from "../../components/Banner/Banner"
 import { Header } from "../../components/Header/Header"
 import { MainLayout } from "../../layout/MainLayout"
 import { ProductosContainer } from "./style"
@@ -8,9 +9,7 @@ export const ProductosPage = () => {
     <Header/>
     <MainLayout>
       <ProductosContainer>
-        <div className="banner">
-          <h1>Productos</h1>
-        </div>
+        <Banner title="Productos"/>
       </ProductosContainer>
     </MainLayout>
     </>
