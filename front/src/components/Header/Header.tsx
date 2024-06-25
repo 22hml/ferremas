@@ -16,7 +16,7 @@ export const Header = () => {
       <HeaderContainer>
         <section>
           <div>
-            FERRETERIA FERREMAS
+            <strong>FERRETERIA FERREMAS</strong>
           </div>
           <ul>
             <li>

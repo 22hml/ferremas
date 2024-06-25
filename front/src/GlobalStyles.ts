@@ -69,6 +69,10 @@ table {
  border-spacing: 0;
 }
 
+strong {
+    font-weight: 600;
+}
+
 .swiper {
     border-radius: 8px;
 }
