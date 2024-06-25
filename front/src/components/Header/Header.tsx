@@ -1,9 +1,8 @@
 import { IconBuildingStore, IconHome, IconPhone, IconShoppingCart, IconShoppingCartPlus } from "@tabler/icons-react"
 import { HeaderContainer } from "./style"
 import { NavLink } from 'react-router-dom'
-import { useEffect, useRef, useState } from "react"
+import { useState } from "react"
 import { Cart } from "../Cart/Cart"
-import autoAnimate from "@formkit/auto-animate"
 
 export const Header = () => {
   const [isExpanded, setIsExpanded] = useState(localStorage.getItem('isExpanded') === 'true' ? true : false)
@@ -12,15 +11,6 @@ export const Header = () => {
     localStorage.setItem('isExpanded', (!isExpanded).toString());
     setIsExpanded(!isExpanded);
   };
-
-  const cartContainerRef = useRef(null);
-
-  useEffect(() => {
-    if (cartContainerRef.current) {
-      autoAnimate(cartContainerRef.current);
-    }
-  }, [cartContainerRef]);
-
   return (
     <>
       <HeaderContainer>
@@ -55,7 +45,7 @@ export const Header = () => {
           </ul>
         </section>
       </HeaderContainer>
-      <div ref={cartContainerRef}>
+      <div>
         {isExpanded && <Cart handleCart={toggleMenu} />}
       </div>
     </>

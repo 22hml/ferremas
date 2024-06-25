@@ -68,4 +68,12 @@ table {
  border-collapse: collapse;
  border-spacing: 0;
 }
+
+.swiper {
+    border-radius: 8px;
+}
+
+:root { 
+    --swiper-theme-color: ${color.primary};
+}
 `

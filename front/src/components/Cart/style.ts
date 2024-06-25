@@ -10,6 +10,7 @@ export const CartMenu = styled.aside`
     background-color: ${color.primary};
     color: white;
     box-shadow: -5px 0px 24px -12px rgba(0,0,0,0.75);
+    z-index: 999;
 
     h3 {
         font-size: 18px;
@@ -22,6 +23,7 @@ export const CartMenu = styled.aside`
         align-items: center;
 
         button {
+            cursor: pointer;
             background-color: transparent;
             border: none;
 

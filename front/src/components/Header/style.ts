@@ -18,21 +18,22 @@ export const HeaderContainer = styled.nav`
 
         ul {
             display: flex;
+            align-items: center;
             gap: 32px;
 
             li {
                 color: black;
 
                 .cartButton {
+                    background-color: ${color.primary};
+                    padding: 6px 16px;
                     cursor: pointer;
+                    color: white;
+                    border-radius: 8px;
                     p {
                         display: flex;
                         align-items: center;
                         gap: 6px;
-                    }
-
-                    &.active {
-                        color: ${color.primary};
                     }
                 }
 

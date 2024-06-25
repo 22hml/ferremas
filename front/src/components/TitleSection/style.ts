@@ -3,6 +3,7 @@ import { color } from "../../GlobalStyles";
 
 
 export const TitleSectionStyled =styled.div`
+    margin-top: 24px;
     display: flex;
     justify-content: center;
     margin-bottom: 16px;
