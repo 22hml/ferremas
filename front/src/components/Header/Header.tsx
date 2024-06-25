@@ -13,6 +13,9 @@ export const Header = () => {
   };
   return (
     <>
+      <section className="ad">
+        <p>DESPACHO EXPRESS $2.990 A LA PROVINCIA DE SANTIAGO, LAMPA, SAN BERNARDO, COLINA Y PUENTE ALTO</p>
+      </section>
       <HeaderContainer>
         <section>
           <div>

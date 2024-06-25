@@ -34,6 +34,7 @@ export const HomePage = () => {
           <SwiperSlide>
             <SwiperItem>
               <img src={Img2} alt="" />
+              <h2>Productos .....</h2>
             </SwiperItem>
           </SwiperSlide>
           <SwiperSlide>

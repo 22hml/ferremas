@@ -77,6 +77,14 @@ strong {
     border-radius: 8px;
 }
 
+.ad {
+    color: white;
+    font-weight: 500;
+    background-color: ${color.primary};
+    text-align: center;
+    padding: 10px 4px;
+}
+
 :root { 
     --swiper-theme-color: ${color.primary};
 }
