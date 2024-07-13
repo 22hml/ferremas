@@ -43,8 +43,13 @@ export const HeaderContainer = styled.nav`
                     gap: 6px;
                     color: black;
                     text-decoration: none;
+                    transition: all 0.3s ease-in-out;
 
                     &.active {
+                        color: ${color.primary};
+                    }
+
+                    &:hover {
                         color: ${color.primary};
                     }
                 }

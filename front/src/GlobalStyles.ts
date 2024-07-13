@@ -85,6 +85,29 @@ strong {
     padding: 10px 4px;
 }
 
+.primaryButton {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: ${color.text};
+        font-weight: 700;
+        margin-top: 16px;
+        border: none;
+        cursor: pointer;
+        background-color: ${color.primary};
+        border-radius: 12px;
+        padding: 12px 16px;
+        transition: all 0.3s ease-in-out;
+        color: white;
+        width: min-content;
+
+        &:hover {
+            outline: 2px solid ${color.primary};
+            color: ${color.primary};
+            background-color: transparent;
+        }
+}
+
 :root { 
     --swiper-theme-color: ${color.primary};
 }

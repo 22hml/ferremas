@@ -1,14 +1,18 @@
 import { IconMinus, IconPaywall, IconPlus, IconX } from "@tabler/icons-react"
 import { CartMenu } from "./style"
 import { useCartStore } from "../../store/useCartStore"
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import autoAnimate from "@formkit/auto-animate";
+import { useNavigate } from "react-router-dom";
+import { Loader } from "../Loader/Loader";
 
 interface PropTypes {
   handleCart: () => void;
 }
 
 export const Cart = ({ handleCart }: PropTypes) => {
+  const [loaderStatus, setLoaderStatus] = useState(false)
+  const navigate = useNavigate();
   const cart = useCartStore((state) => state.cart)
   const removeFromCart = useCartStore((state) => state.removeFromCart)
   const incrementQuantity = useCartStore((state) => state.incrementQuantity)
@@ -28,6 +32,7 @@ export const Cart = ({ handleCart }: PropTypes) => {
 
 
   return (
+    <>
     <CartMenu>
       <div className="topSection">
         <h3>Tu carrito</h3>
@@ -47,8 +52,16 @@ export const Cart = ({ handleCart }: PropTypes) => {
       </div>
       <section className="paySection">
         <p>Total: ${calculateTotal()}</p>
-        <button>Pagar <IconPaywall/></button>
+        <button onClick={() => {
+          setLoaderStatus(true)
+          setTimeout(() => {
+            setLoaderStatus(false)
+            navigate('/Pasarela')
+          }, 2000)
+        }}>Pagar <IconPaywall/></button>
       </section>
     </CartMenu>
+    {loaderStatus && <Loader text="Cargando"/>}
+    </>
   )
 }
