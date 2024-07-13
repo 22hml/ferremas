@@ -19,7 +19,7 @@ export const Header = () => {
       <HeaderContainer>
         <section>
           <a href="/" style={{textDecoration: "none", color: "black"}}>
-            <div>
+            <div className="title">
               <strong>FERRETERIA FERREMAS</strong>
             </div>
           </a>
@@ -39,7 +39,7 @@ export const Header = () => {
                 Contacto <IconPhone size={24} stroke={2} />
               </NavLink>
             </li>
-            <li>
+            <li className="mobile">
               <div className={isExpanded ? "cartButton active" : "cartButton"} onClick={() => toggleMenu()}>
                 <p>
                   Mi Carrito

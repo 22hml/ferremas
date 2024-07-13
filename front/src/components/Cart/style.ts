@@ -14,6 +14,11 @@ export const CartMenu = styled.aside`
     z-index: 999;
     overflow-y: auto; /* Permite el desplazamiento vertical */
 
+    @media screen and (max-width: 768px) {
+        width: 100%;
+        padding: 0;
+    }
+
     h3 {
         font-size: 18px;
         font-weight: 600;

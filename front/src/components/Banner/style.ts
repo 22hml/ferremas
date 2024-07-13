@@ -19,5 +19,9 @@ export const BannerContainer = styled.div`
             align-items: center;
             justify-content: center;
             height: 100%;
+
+            @media screen and (max-width: 768px) {
+                font-size: 2rem;
+            }
         }
 `

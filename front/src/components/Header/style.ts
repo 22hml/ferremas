@@ -16,6 +16,12 @@ export const HeaderContainer = styled.nav`
         align-items: center;
         justify-content: space-between;
 
+        .title {
+            @media screen and (max-width: 768px) {
+                padding-left: 12px;
+            }
+        }
+
         ul {
             display: flex;
             align-items: center;
@@ -34,6 +40,10 @@ export const HeaderContainer = styled.nav`
                         display: flex;
                         align-items: center;
                         gap: 6px;
+
+                        @media screen and (max-width: 768px) {
+                            white-space: nowrap;
+                        }
                     }
                 }
 
@@ -51,6 +61,14 @@ export const HeaderContainer = styled.nav`
 
                     &:hover {
                         color: ${color.primary};
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    display: none;
+
+                    &.mobile {
+                        display: block;
                     }
                 }
             }

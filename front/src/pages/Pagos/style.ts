@@ -29,6 +29,10 @@ export const PagosStyles = styled.div`
         justify-content: start;
         gap: 12px;
 
+        @media screen and (max-width: 768px) {
+            max-width: 100%;
+        }
+
         label {
             display: flex;
             align-items: center;

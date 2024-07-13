@@ -34,12 +34,13 @@ export const HomePage = () => {
           <SwiperSlide>
             <SwiperItem>
               <img src={Img2} alt="" />
-              <h2>Productos .....</h2>
+              <h1>Ferremás</h1>
             </SwiperItem>
           </SwiperSlide>
           <SwiperSlide>
             <SwiperItem>
               <img src={Img3} alt="" />
+              <h1>Ferremás</h1>
             </SwiperItem>
           </SwiperSlide>
         </Swiper>

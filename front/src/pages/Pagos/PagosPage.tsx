@@ -6,14 +6,11 @@ import { PagosStyles } from "./style"
 import { IconCashRegister } from "@tabler/icons-react"
 import { Loader } from "../../components/Loader/Loader"
 import { Modal } from "../../components/Modal/Modal"
-import { useNavigate } from "react-router-dom"
-
 
 export const PagosPage = () => {
     const [loaderStatus, setLoaderStatus] = useState(false)
     const [showModal, setShowModal] = useState(false)
     const cart = useCartStore((state) => state.cart)
-    const navigate = useNavigate()
     const cleanCart = useCartStore((state) => state.cleanCart)
 
     const calculateTotal = () => {
